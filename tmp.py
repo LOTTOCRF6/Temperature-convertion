@@ -4,7 +4,7 @@ import tkinter
 
 root = tkinter.Tk()   # created  window
 root.title("Temperature Converter")   # naming the recently created window
-root.geometry("810x500")   # the size of the window
+root.geometry("500x400")   # the size of the window
 root.config(bg="blue")   # the background color for the window
 
 l1 = tkinter.LabelFrame(root, text="Celsius to Farenheit", padx=20, pady=20)
@@ -24,7 +24,7 @@ btn_active = tkinter.Button(root, text="Active -Celsius to Fahrenheit", command=
 btn_active.grid(row=6, column=0)
 
 l2 = tkinter.LabelFrame(root, text="Fahrenheit to Celsius", padx=20, pady=20)
-l2.grid(row=2, column=5)
+l2.grid(row=2, column=1)
 
 e2 = tkinter.Entry(l2, state="disable")
 e2.grid(row=4, column=5)
@@ -37,7 +37,7 @@ def far_active():
 
 
 btn_active1 = tkinter.Button(root, text="Active -Fahrenheit to Celsius", command=far_active, bg='Green', fg='white')
-btn_active1.grid(row=6, column=5)
+btn_active1.grid(row=6, column=1)
 
 
 # defining function that will exit/ close the window/ program
@@ -46,7 +46,7 @@ def close():
 
 
 exit_btn = tkinter.Button(text="Exit Program", command=close, bg='Red', fg='white')
-exit_btn.grid(row=8, column=0)
+exit_btn.place(x=55, y=180)
 
 
 # defining function for converting celsius to fahrenheit
@@ -66,17 +66,17 @@ def convert_f():
 
 
 result_btn = tkinter.Button(root, text="Convert C-F", command=convert_c, bg='Brown', fg='white')
-result_btn.grid(row=7, column=2)
+result_btn.grid(row=7, column=0)
 
 
 # action button for converting Fahrenheit to Celsius and calling the convert_f()
 result_btn2 = tkinter.Button(root, text="Convert F-C", command=convert_f, bg='Brown', fg='white')
-result_btn2.grid(row=7, column=4)
+result_btn2.grid(row=7, column=1)
 
 
 # the result_entry or output entry
 result_entry = tkinter.Entry(root, bg="light green")
-result_entry.grid(row=8, column=2)
+result_entry.place(x=130, y=150)
 
 
 # defining function that will delete the figure in the Entry box/ input box
@@ -88,11 +88,7 @@ def clear():
 
 # Clear button and calling the clear()
 clear_btn = tkinter.Button(root, text="Clear", command=clear, bg='Orange', fg='white')
-clear_btn.grid(row=8, column=6)
+clear_btn.place(x=280, y=180)
 
 # starting the app
 root.mainloop()
-
-
-
-
